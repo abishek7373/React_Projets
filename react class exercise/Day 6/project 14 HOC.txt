@@ -1,0 +1,70 @@
+import React from "react";
+import ParentComponentA from "./HOC/ParentComponentA";
+import ParentComponentB from "./HOC/ParentComponentB";
+const App=()=> {
+  return (
+    <>
+     <ParentComponentA></ParentComponentA>
+     <ParentComponentB></ParentComponentB>
+    </>
+  );
+}
+export default App;
+
+
+import React from 'react'
+import SharedListComponent from './SharedListComponent'
+
+const ParentComponentA = () => {
+    const dataA=[1,2,3,4,5]
+  return (
+    <div>
+        <center>
+      <h1>Parent Component A</h1>
+      </center>
+      <SharedListComponent data={dataA} />
+    </div>
+  )
+}
+
+export default ParentComponentA
+
+
+
+
+import React from 'react'
+import SharedListComponent from './SharedListComponent'
+
+const ParentComponentB = () => {
+    const dataB=[6,7,8,9,10]
+  return (
+    <div>
+        <center>
+      <h1>Parent Component B</h1>
+      </center>
+      <SharedListComponent data={dataB}/>
+    </div>
+  )
+}
+
+export default ParentComponentB
+
+
+
+import React from 'react';
+
+const SharedListComponent = ({data}) => {
+  return (
+    <div>
+      
+      <h1 style={{marginLeft:'520px'}}>Shared List Component</h1>
+      <ul style={{marginLeft:'630px'}}>
+        {data.map((item,index)=>(
+            <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default SharedListComponent

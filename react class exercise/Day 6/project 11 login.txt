@@ -1,0 +1,29 @@
+import React from "react";
+import Sample from './components/sample';
+function App() {
+  return (
+    <>
+      <Sample />
+    </>
+  );
+}
+export default App;
+
+import React,{useRef} from "react";
+const Sample = () => {
+    const usernameRef = useRef(null);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const username = usernameRef.current.value;
+        alert(username)
+    }
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type='text' ref={usernameRef} />
+                <button>Login</button>
+            </form>
+        </div>
+    )
+}
+export default Sample;

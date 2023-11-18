@@ -1,0 +1,47 @@
+1. diplaying both pass and fail
+
+
+import PassMessage from './PassMessage';
+import FailMessage from './FailMessage';
+import React from 'react';
+class App extends React.Component{
+  render()
+  {
+    return(
+      <div>
+        <PassMessage/>
+        <FailMessage/>
+      </div>
+    );
+  }
+}
+export default App;
+
+import React from 'react';
+class PassMessage extends React.Component
+{
+    render()
+    {
+        return <center><h1 style={
+            {
+                color:'green'
+            }
+        }>Congratulation You Passed the Exam!!!</h1></center>;
+    }
+}
+export default PassMessage;
+
+import React from 'react';
+class FailMessage extends React.Component
+{
+    render()
+    {
+        return <center><h1 style={
+            {
+                color:'red'
+            }
+        }>Sorry you Failed the Exam!!!</h1></center>;
+    }
+}
+export default FailMessage;
+
